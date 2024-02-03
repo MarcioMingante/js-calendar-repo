@@ -1,5 +1,5 @@
 const createDaysOfTheWeek = () => {
-  const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
+  const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
   const weekDaysList = document.querySelector('.week-days');
 
   for (let index = 0; index < weekDays.length; index += 1) {
@@ -8,8 +8,8 @@ const createDaysOfTheWeek = () => {
     dayListItem.innerHTML = days;
 
     weekDaysList.appendChild(dayListItem);
-  };
-}
+  }
+};
 
 createDaysOfTheWeek();
 
@@ -36,3 +36,19 @@ for (let index = 0; index < decemberDaysList.length; index += 1) {
 
   daysList.appendChild(day);
 }
+
+// Segundo requisito
+
+const holidayButton = document.getElementById('btn-holiday');
+
+holidayButton.addEventListener('click', () => {
+  const holidays = document.getElementsByClassName('holiday');
+
+  for (let index = 0; index < holidays.length; index += 1) {
+    if (holidays[index].style.backgroundColor === 'green') {
+      holidays[index].style.backgroundColor = 'rgb(238,238,238)';
+    } else if (holidays[index].style.backgroundColor !== 'green') {
+      holidays[index].style.backgroundColor = 'green';
+    }
+  }
+});
