@@ -25,7 +25,7 @@ for (let index = 0; index < decemberDaysList.length; index += 1) {
   const day = document.createElement('li');
   day.className = 'day';
   day.innerText = `${decemberlist}`;
-  
+
   if (decemberlist === 24 || decemberlist === 25 || decemberlist === 31) {
     day.className += ' holiday';
   }
@@ -49,6 +49,26 @@ holidayButton.addEventListener('click', () => {
       holidays[index].style.backgroundColor = 'rgb(238,238,238)';
     } else if (holidays[index].style.backgroundColor !== 'green') {
       holidays[index].style.backgroundColor = 'green';
+    }
+  }
+});
+
+// Terceiro rerquisito
+
+const fridayButton = document.getElementById('btn-friday');
+const fridays = document.getElementsByClassName('friday');
+const savedDays = [];
+
+for (let index = 0; index < fridays.length; index += 1) {
+  savedDays.push(fridays[index].innerText);
+}
+
+fridayButton.addEventListener('click', () => {
+  for (let index = 0; index < fridays.length; index += 1) {
+    if (fridays[index].innerText !== 'sextou') {
+      fridays[index].innerText = 'sextou';
+    } else if (fridays[index].innerText === 'sextou') {
+      fridays[index].innerText = savedDays[index];
     }
   }
 });
