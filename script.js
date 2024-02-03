@@ -72,3 +72,8 @@ fridayButton.addEventListener('click', () => {
     }
   }
 });
+
+// Quarto requisito
+
+const days = document.getElementsByClassName('day');
+
